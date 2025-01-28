@@ -4,10 +4,10 @@ resourcegroup_info = {
 }
 
 vnet_info = {
-  name          = "tf-network"
-  address_space = [ "10.0.0.0/16" ]
+  name          = [ "VNet1-tf", "VNet2-tf" ]
+  address_space = [ "192.168.0.0/16", "10.0.0.0/16" ]
 }
 
 subnets_info = {
-  names         = [ "web", "app", "data" ]
+  names         = [ "web", "app", "cache", "db" ]
 }

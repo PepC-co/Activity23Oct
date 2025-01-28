@@ -11,11 +11,11 @@ variable "resourcegroup_info" {
 
 variable "vnet_info" {
     type = object({
-        name            = string
+        names           = list(string)
         address_space   = list(string)
     })
     default = {
-        name            = "network-tf"
+        names           = [ "tf-network" ]
         address_space   = [ "10.10.0.0/16" ]
     }
 }

@@ -4,8 +4,9 @@ resource "azurerm_resource_group" "tf_rg" {
 }
 
 resource "azurerm_virtual_network" "tf_vnet" {
-    name                 = var.vnet_info.name
-    address_space        = var.vnet_info.address_space
+    count                = length(var.vnet_info.names)
+    name                 = var.vnet_info.names[count.index]
+    address_space        = var.vnet_info.address_space[count.index]
     resource_group_name  = var.resourcegroup_info.name
     location             = var.resourcegroup_info.location
     
